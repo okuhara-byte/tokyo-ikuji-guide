@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-blue: #0017C1;
+  --color-blue-hover: #0011A0;
+  --color-blue-light: #F0F2FF;
+  --color-blue-mid: #4B7BE5;
+  --color-pink: #B5006B;
+  --color-pink-light: #FFF0F8;
+  --color-purple: #4A1DB5;
+  --color-purple-light: #F3F0FF;
+  --color-text: #1A1A1A;
+  --color-sub: #595959;
+  --color-mute: #767676;
+  --color-border: #D4D4D4;
+  --color-border-light: #EBEBEB;
+  --color-bg: #ffffff;
+  --color-bg2: #F8F8F8;
+  --color-bg3: #F2F3F5;
+  --color-notice-bg: #FFF8E0;
+  --color-notice-border: #E8A000;
+  --color-warn-bg: #FFF0F0;
+  --color-warn-border: #CC0000;
+  --color-ok-bg: #F0FFF4;
+  --color-ok-border: #00892C;
+  --color-tag-blue-bg: #E8EEFF;
+  --color-tag-blue-text: #0017C1;
+  --color-tag-green-bg: #E6F7ED;
+  --color-tag-green-text: #007A34;
+  --color-tag-orange-bg: #FFF3E0;
+  --color-tag-orange-text: #A85700;
+  --color-tag-purple-bg: #F3F0FF;
+  --color-tag-purple-text: #4A1DB5;
+  --color-tag-pink-bg: #FFF0F8;
+  --color-tag-pink-text: #B5006B;
+  --font-sans: 'Noto Sans JP', 'ヒラギノ角ゴ ProN', Meiryo, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fade-in animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out both;
+}
