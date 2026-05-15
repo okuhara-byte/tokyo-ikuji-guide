@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { Benefit, CAT_LABELS, TIER_LABELS } from '@/data/types';
+import { BENEFIT_DETAILS } from '@/data/benefitDetails';
 
 function getDeadlineBadge(b: Benefit) {
   if (!b.deadline || !b.deadline.month) {
@@ -116,14 +118,23 @@ export default function BenefitCard({ benefit: b, index }: BenefitCardProps) {
           </div>
           <div className="text-[12px] text-sub mt-0.5">{b.as}</div>
         </div>
-        <a
-          href={b.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[13px] text-blue font-bold border border-blue rounded px-4 py-1.5 no-underline transition-colors hover:bg-blue hover:text-white"
-        >
-          詳細・申請
-        </a>
+        {BENEFIT_DETAILS[b.id] ? (
+          <Link
+            href={`/benefit/${b.id}`}
+            className="text-[13px] text-blue font-bold border border-blue rounded px-4 py-1.5 no-underline transition-colors hover:bg-blue hover:text-white"
+          >
+            詳細・申請ガイド
+          </Link>
+        ) : (
+          <a
+            href={b.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[13px] text-blue font-bold border border-blue rounded px-4 py-1.5 no-underline transition-colors hover:bg-blue hover:text-white"
+          >
+            詳細・申請
+          </a>
+        )}
       </div>
     </article>
   );
